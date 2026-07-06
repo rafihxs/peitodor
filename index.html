@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onde dói hoje, Gaby?</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth}
+    body{min-height:100vh;background:#070814;color:#fff;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at top left,#3c2c7c55,transparent 35%),radial-gradient(circle at top right,#ff8fc744,transparent 30%),linear-gradient(180deg,#080918,#11132b 70%,#070814);z-index:-3}
+    body:after{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,#000,transparent 80%);z-index:-2}
+    .particles{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}.dot{position:absolute;width:5px;height:5px;background:#ffd6e8;border-radius:50%;opacity:.3;animation:rise linear infinite}
+    @keyframes rise{from{transform:translateY(105vh) scale(.8);opacity:0}20%{opacity:.35}to{transform:translateY(-10vh) scale(1.4);opacity:0}}
+    .app{max-width:460px;margin:auto;padding:22px 17px 70px}.screen{display:none;min-height:100vh;animation:show .65s ease}.screen.active{display:block}.center{display:flex;flex-direction:column;justify-content:center;text-align:center}.hero{gap:18px}.eyebrow{display:inline-flex;justify-content:center;margin:auto;padding:8px 14px;border:1px solid #ffffff22;border-radius:999px;background:#ffffff0d;color:#ffd6e8;font-size:.82rem}.logo{font-size:3.1rem;filter:drop-shadow(0 0 18px #ff8fc788);animation:pulse 2.4s infinite}.title{font-size:2.25rem;line-height:1.05;color:#ffd6e8;text-shadow:0 0 24px #ff8fc755}.subtitle{color:#dfe3ff;line-height:1.65;font-size:1rem}.card{background:linear-gradient(145deg,#ffffff12,#ffffff08);border:1px solid #ffffff24;border-radius:28px;padding:22px 16px;margin:18px 0;box-shadow:0 18px 55px #0008;backdrop-filter:blur(10px)}.glass{background:#ffffff10;border:1px solid #ffffff25;border-radius:22px;padding:17px;margin:12px 0}.btn{border:0;border-radius:999px;padding:15px 22px;background:linear-gradient(135deg,#ff8fc7,#8e7cff);color:white;font-weight:800;font-size:1rem;box-shadow:0 0 28px #ff8fc755;cursor:pointer}.btn.secondary{background:#ffffff12;border:1px solid #ffffff25;box-shadow:none}.btn:active{transform:scale(.97)}h1,h2,h3{color:#ffd6e8}h2{font-size:1.45rem;margin-bottom:10px}p{color:#dde1ff;line-height:1.6;margin-bottom:10px}.topbar{position:sticky;top:0;z-index:5;margin:-22px -17px 15px;padding:14px 17px;background:linear-gradient(#080918ee,#080918aa,transparent);backdrop-filter:blur(10px)}.progress{height:12px;background:#ffffff16;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ff8fc7,#8e7cff);transition:.45s}.mini{font-size:.85rem;color:#ffd6e8;margin-top:8px}.body-map{position:relative;width:238px;height:470px;margin:20px auto}.part{position:absolute;background:linear-gradient(135deg,#283064,#49336e);border:2px solid #ffffff33;box-shadow:inset 0 0 16px #ffffff14;cursor:pointer;transition:.25s}.part.done{background:linear-gradient(135deg,#ff8fc7,#8e7cff);box-shadow:0 0 28px #ff8fc799}.head{width:76px;height:76px;border-radius:50%;left:81px;top:0}.neck{width:45px;height:30px;border-radius:15px;left:96px;top:68px}.chest{width:132px;height:118px;border-radius:45px 45px 28px 28px;left:53px;top:92px}.heartspot{width:42px;height:42px;border-radius:50%;left:88px;top:120px;background:linear-gradient(135deg,#ff5fa8,#ffb3d7);z-index:2}.belly{width:112px;height:108px;border-radius:35px 35px 48px 48px;left:63px;top:205px}.arm{width:40px;height:178px;border-radius:30px;top:105px}.leftarm{left:6px;transform:rotate(12deg)}.rightarm{right:6px;transform:rotate(-12deg)}.leg{width:48px;height:150px;border-radius:27px;top:308px}.leftleg{left:65px}.rightleg{right:65px}.foot{width:58px;height:28px;border-radius:20px;top:445px}.leftfoot{left:55px}.rightfoot{right:55px}.msgbox{min-height:160px}.range{width:100%;accent-color:#ff8fc7}.choice,.weight,.star,.piece{width:100%;display:block;text-align:left;margin:10px 0;padding:14px;border-radius:18px;border:1px solid #ffffff25;background:#ffffff10;color:#fff;font-weight:700}.choice.good,.weight.done,.piece.found{background:#7affb833;border-color:#7affb8}.choice.bad{background:#ff789633;border-color:#ff7896}.thought-area{position:relative;height:340px;border-radius:26px;background:radial-gradient(circle,#ffffff12,#00000020);overflow:hidden;border:1px solid #ffffff22}.thought{position:absolute;padding:11px 13px;border-radius:999px;background:#ff789633;border:1px solid #ffb1c8;color:#fff;font-size:.85rem;animation:floaty 5s infinite alternate;cursor:pointer}.thought.cleared{background:#7affb833;border-color:#7affb8;text-decoration:line-through;opacity:.75}.bag{font-size:4.5rem;animation:pulse 2s infinite}.week-grid{display:grid;grid-template-columns:1fr;gap:10px}.day{padding:14px;border-radius:18px;background:#ffffff10;border:1px solid #ffffff22;text-align:left}.sky{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.star{text-align:center;font-size:1.5rem;padding:18px 8px}.heart-puzzle{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.piece{text-align:center;padding:18px}.letter{font-size:1.02rem;text-align:left}.footer-space{height:40px}@keyframes show{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{50%{transform:scale(1.05)}}@keyframes floaty{from{transform:translate(0,0)}to{transform:translate(18px,-26px)}}
+  </style>
+</head>
+<body>
+<div class="particles" id="particles"></div>
+<div class="app">
+  <section class="screen center hero active" id="intro">
+    <div class="logo">💗</div><span class="eyebrow">Feito com carinho por Rafihx</span>
+    <h1 class="title">Onde dói hoje, Gaby?</h1>
+    <p class="subtitle">Um lugar para você tocar onde dói, aliviar um pouquinho a semana pesada e lembrar que você não precisa carregar tudo sozinha.</p>
+    <div class="card"><p>Talvez eu não consiga tirar tudo hoje, mas um dia eu quero cuidar de todas as suas dores bem de pertinho, com paciência, presença, abraço e amor.</p></div>
+    <button class="btn" onclick="go('body')">Entrar nesse cuidado</button>
+  </section>
+
+  <section class="screen" id="body">
+    <div class="topbar"><div class="progress"><div class="fill" id="globalFill"></div></div><div class="mini" id="globalText">Progresso do carinho: 0%</div></div>
+    <h1>Toque onde dói</h1><p>Quando você tocar em uma parte do corpo, ela acende e abre uma mensagem feita para acolher você.</p>
+    <div class="card">
+      <div class="body-map">
+        <div class="part head" onclick="selectPain('Cabeça','Se sua cabeça está cheia, respira comigo. Você não precisa resolver tudo agora. Sua mente merece silêncio, descanso e carinho.',this)"></div>
+        <div class="part neck" onclick="selectPain('Pescoço','Quando a tensão fica presa aqui, parece que a semana inteira pesou. Solta um pouco os ombros. Você merece leveza.',this)"></div>
+        <div class="part chest" onclick="selectPain('Peito','Se o peito apertou, eu queria ser abraço. Mesmo de longe, meu carinho tenta chegar aí e ficar com você.',this)"></div>
+        <div class="part heartspot" onclick="selectPain('Coração','Se dói no coração, lembra: você é amada até quando está cansada, confusa, quieta ou sensível.',this)"></div>
+        <div class="part belly" onclick="selectPain('Barriga','Ansiedade às vezes aparece aqui. Respira devagar. Você está segura, e esse momento vai passar.',this)"></div>
+        <div class="part arm leftarm" onclick="selectPain('Ombros','Você carrega muita coisa, Gaby. Nem tudo precisa ficar nas suas costas. Um dia eu quero dividir esse peso com você.',this)"></div>
+        <div class="part arm rightarm" onclick="selectPain('Mãos','Um dia eu quero segurar suas mãos e dizer: descansa, eu estou aqui, não precisa enfrentar tudo sozinha.',this)"></div>
+        <div class="part leg leftleg" onclick="selectPain('Pernas','Se suas pernas cansaram, é porque você continuou mesmo nos dias difíceis. Isso também é força.',this)"></div>
+        <div class="part leg rightleg" onclick="selectPain('Cansaço','Quando tudo em você cansa, eu ainda vejo beleza, força e valor em você.',this)"></div>
+        <div class="part foot leftfoot" onclick="selectPain('Pés','Se até seus passos pesaram hoje, deixa o mundo esperar um pouco. Você merece pausa.',this)"></div>
+        <div class="part foot rightfoot" onclick="selectPain('Semana','A semana pode ter vindo pesada, mas ela não define você. Você passou por ela com coragem.',this)"></div>
+      </div>
+      <div class="glass msgbox" id="painMsg"><h2>Estou aqui ❤️</h2><p>Toque em uma parte do corpo.</p></div>
+      <label class="mini">Intensidade da dor: <b id="painLevel">5</b>/10</label>
+      <input class="range" id="range" type="range" min="1" max="10" value="5" oninput="painIntensity(this.value)">
+      <div class="glass" id="intensityMsg"><p>Escolha a intensidade para receber uma mensagem mais certa para o momento.</p></div>
+    </div>
+    <button class="btn" onclick="completeStep(1);go('anxiety')">Jogo da ansiedade</button>
+  </section>
+
+  <section class="screen" id="anxiety">
+    <h1>Jogo 1: Quebrar pensamentos</h1><p>Toque nos pensamentos ruins antes que eles pesem mais. Cada um vira uma frase de cuidado.</p>
+    <div class="card"><div class="thought-area" id="thoughtArea"></div><p class="mini" id="thoughtStatus">Pensamentos acalmados: 0/8</p></div>
+    <button class="btn secondary" onclick="spawnThoughts()">Recomeçar jogo</button><button class="btn" id="toChoices" style="display:none" onclick="completeStep(2);go('choices')">Próximo jogo</button>
+  </section>
+
+  <section class="screen" id="choices">
+    <h1>Jogo 2: Escolhas que acolhem</h1><p>Ajude Rafihx a escolher atitudes que cuidam da Gaby quando a ansiedade e o cansaço aparecem.</p>
+    <div class="card"><h2 id="qTitle">Fase 1</h2><p id="qText"></p><div id="options"></div><p class="mini" id="choiceStatus">Calma: 0</p></div>
+  </section>
+
+  <section class="screen" id="weights">
+    <h1>Jogo 3: Tirar o peso da semana</h1><p>Clique nos pesos da mochila. Cada peso vira carinho.</p>
+    <div class="card"><div class="bag">🎒</div><div id="weightsList"></div><div class="progress"><div class="fill" id="weightFill"></div></div><p class="mini" id="weightStatus">Pesos aliviados: 0/8</p></div>
+    <button class="btn" id="toWeek" style="display:none" onclick="completeStep(4);go('week')">Caminhar pela semana</button>
+  </section>
+
+  <section class="screen" id="week">
+    <h1>Caminho da semana</h1><p>De segunda até domingo, cada dia lembra que ela conseguiu continuar.</p>
+    <div class="card week-grid" id="weekGrid"></div>
+    <button class="btn" onclick="completeStep(5);go('sky')">Abrir céu de mensagens</button>
+  </section>
+
+  <section class="screen" id="sky">
+    <h1>Céu de mensagens</h1><p>Toque nas estrelas para revelar mensagens escondidas.</p>
+    <div class="card sky" id="skyGrid"></div>
+    <div class="glass" id="starMsg"><p>Escolha uma estrela.</p></div>
+    <button class="btn" onclick="completeStep(6);go('puzzle')">Juntar coração final</button>
+  </section>
+
+  <section class="screen" id="puzzle">
+    <h1>Jogo final: coração inteiro</h1><p>Encontre os 8 pedaços. Cada pedaço representa um cuidado que eu quero ter com você.</p>
+    <div class="card heart-puzzle" id="puzzleGrid"></div>
+    <button class="btn" id="letterBtn" style="display:none" onclick="completeStep(7);go('final')">Abrir carta final</button>
+  </section>
+
+  <section class="screen" id="final">
+    <div class="card final letter"><h1>Gaby, um dia eu vou cuidar de você</h1>
+      <p>Eu sei que às vezes a semana pesa demais. Pesa no corpo, no peito, na cabeça, na vontade e até no silêncio.</p>
+      <p>Eu sei que tem dor que você nem sempre consegue explicar. Tem cansaço que não é só sono. Tem ansiedade que chega sem pedir licença. Tem dias em que você só queria parar um pouco e sentir que alguém entende.</p>
+      <p>E eu quero ser esse alguém.</p>
+      <p>Hoje talvez eu ainda não consiga estar aí para cuidar de todas as suas dores de perto. Mas um dia eu quero estar.</p>
+      <p>Quero cuidar do seu cansaço, te lembrar de descansar, te abraçar quando o peito apertar, ouvir você quando sua mente estiver cheia e ficar do seu lado até nos dias em que você não souber explicar o que sente.</p>
+      <p>Eu não quero amar só sua parte feliz. Eu quero cuidar também da sua parte cansada, ansiosa, confusa, sensível e silenciosa.</p>
+      <p>Se a cabeça doer, eu quero ser paz. Se o peito apertar, eu quero ser abraço. Se o corpo estiver exausto, eu quero ser descanso. Se a semana pesar, eu quero ser presença.</p>
+      <p>Você não precisa carregar a semana sozinha. Você não precisa fingir que está tudo bem comigo.</p>
+      <p>Um dia eu vou cuidar de todas as suas dores do jeito mais bonito que eu conseguir: com presença, paciência, carinho e amor.</p>
+      <p><strong>Com todo carinho do mundo, Rafihx ❤️</strong></p>
+    </div><div class="footer-space"></div>
+  </section>
+</div>
+<script>
+const screens=document.querySelectorAll('.screen');let global=0;function go(id){screens.forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);if(id==='anxiety')spawnThoughts();if(id==='choices')loadQuestion();if(id==='weights')loadWeights();if(id==='week')loadWeek();if(id==='sky')loadStars();if(id==='puzzle')loadPuzzle()}
+function completeStep(n){global=Math.max(global,n);let pct=Math.round(global/7*100);let f=document.getElementById('globalFill'),t=document.getElementById('globalText');if(f){f.style.width=pct+'%';t.innerText='Progresso do carinho: '+pct+'%'}}
+for(let i=0;i<45;i++){let d=document.createElement('span');d.className='dot';d.style.left=Math.random()*100+'vw';d.style.animationDuration=5+Math.random()*8+'s';d.style.animationDelay=Math.random()*6+'s';document.getElementById('particles').appendChild(d)}
+let selectedPain='';function selectPain(title,text,el){selectedPain=title;el.classList.add('done');document.getElementById('painMsg').innerHTML='<h2>'+title+'</h2><p>'+text+'</p>';painIntensity(document.getElementById('range').value)}
+function painIntensity(v){document.getElementById('painLevel').innerText=v;let msg=v<=3?'Ainda parece suportável, mas mesmo uma dor pequena merece cuidado.':v<=6?'Essa dor está pesando. Não ignora seu corpo, Gaby. Você merece pausa e carinho.':v<=8?'Eu queria muito estar aí agora para cuidar de você e aliviar esse peso com um abraço.':'Se está nesse nível, respira e não enfrenta isso sozinha. Procure apoio de alguém perto também. Você importa muito.';document.getElementById('intensityMsg').innerHTML='<p>'+msg+'</p>'}
+const bad=['não sou suficiente','vai dar tudo errado','ninguém entende','estou cansada demais','meu peito pesa','a semana venceu','não consigo explicar','minha mente não para'];const good=['você é suficiente','um passo de cada vez','eu quero entender você','descansa um pouco','respira, estou aqui','a semana não venceu você','você não precisa explicar tudo','sua mente merece paz'];let cleared=0;function spawnThoughts(){cleared=0;document.getElementById('toChoices').style.display='none';const area=document.getElementById('thoughtArea');area.innerHTML='';bad.forEach((b,i)=>{let x=document.createElement('button');x.className='thought';x.innerText=b;x.style.left=(5+Math.random()*55)+'%';x.style.top=(8+Math.random()*72)+'%';x.onclick=()=>{if(x.classList.contains('cleared'))return;x.classList.add('cleared');x.innerText=good[i];cleared++;document.getElementById('thoughtStatus').innerText='Pensamentos acalmados: '+cleared+'/8';if(cleared===8)document.getElementById('toChoices').style.display='inline-block'};area.appendChild(x)});document.getElementById('thoughtStatus').innerText='Pensamentos acalmados: 0/8'}
+const qs=[['O peito dela apertou. O que acolhe mais?',['Cobrar resposta rápida','Falar: respira, eu estou aqui','Sumir até passar'],1],['Ela diz que a semana pesou.',['Dizer que é exagero','Lembrar que ela é forte, mas merece descanso','Mudar de assunto'],1],['Ela fica quieta.',['Acolher sem pressionar','Brigar porque ela mudou','Ignorar'],0],['Ela fala mal dela mesma.',['Concordar','Dizer que ela continua maravilhosa mesmo cansada','Fazer piada'],1],['Ela está exausta.',['Pedir mais atenção','Oferecer carinho e calma','Cobrar planos'],1]];let qi=0,calm=0;function loadQuestion(){qi=0;calm=0;renderQ()}function renderQ(){document.getElementById('qTitle').innerText='Fase '+(qi+1);document.getElementById('qText').innerText=qs[qi][0];let box=document.getElementById('options');box.innerHTML='';qs[qi][1].forEach((op,i)=>{let b=document.createElement('button');b.className='choice';b.innerText=op;b.onclick=()=>ans(i,b);box.appendChild(b)});document.getElementById('choiceStatus').innerText='Calma: '+calm}function ans(i,b){if(i===qs[qi][2]){b.classList.add('good');calm++;document.getElementById('choiceStatus').innerText='Escolha certa. Ansiedade precisa de calma. Calma: '+calm;setTimeout(()=>{qi++;if(qi>=qs.length){completeStep(3);go('weights')}else renderQ()},900)}else{b.classList.add('bad');document.getElementById('choiceStatus').innerText='Essa escolha machucaria mais. Tente uma opção mais acolhedora.'}}
+const weights=['💼 Trabalho e rotina','🧠 Pensamentos acelerados','💔 Medo de não ser suficiente','😞 Cansaço acumulado','🌙 Noites difíceis','🫂 Vontade de colo','🕰️ Semana longa demais','🩹 Dores que ela esconde'];let w=0;function loadWeights(){w=0;document.getElementById('toWeek').style.display='none';let list=document.getElementById('weightsList');list.innerHTML='';weights.forEach(txt=>{let b=document.createElement('button');b.className='weight';b.innerText=txt;b.onclick=()=>{if(b.classList.contains('done'))return;b.classList.add('done');b.innerText='✨ Virou carinho e descanso';w++;document.getElementById('weightFill').style.width=(w/8*100)+'%';document.getElementById('weightStatus').innerText='Pesos aliviados: '+w+'/8';if(w===8)document.getElementById('toWeek').style.display='inline-block'};list.appendChild(b)});document.getElementById('weightFill').style.width='0';document.getElementById('weightStatus').innerText='Pesos aliviados: 0/8'}
+function loadWeek(){let days=['Segunda: você começou mesmo cansada.','Terça: você continuou mesmo com a mente cheia.','Quarta: talvez tenha pesado mais, mas você não desistiu.','Quinta: seu coração mereceu pausa.','Sexta: o corpo sentiu a semana, mas você foi forte.','Sábado: até no limite, você continuou sendo incrível.','Domingo: você merece descanso, carinho e paz.'];document.getElementById('weekGrid').innerHTML=days.map(d=>'<div class="day">'+d+'</div>').join('')}
+const stars=['Você é suficiente.','Sua dor importa.','Eu tenho orgulho de você.','Você não precisa fingir força.','Seu jeito não é ruim.','Você merece descanso.','Eu escolheria você de novo.','Um dia eu vou cuidar de perto.','Seu silêncio também merece acolhimento.','Você é linda até cansada.','Sua semana não define seu valor.','Rafihx te ama muito.'];function loadStars(){document.getElementById('skyGrid').innerHTML=stars.map((s,i)=>'<button class="star" onclick="starMsg(\''+s.replace(/'/g,"\\'")+'\')">⭐</button>').join('')}function starMsg(s){document.getElementById('starMsg').innerHTML='<p>'+s+'</p>'}
+const pieces=['Paciência','Presença','Abraço','Cuidado','Escuta','Paz','Carinho','Amor'];let found=0;function loadPuzzle(){found=0;document.getElementById('letterBtn').style.display='none';document.getElementById('puzzleGrid').innerHTML=pieces.map(p=>'<button class="piece" onclick="piece(this)">💗 ?</button>').join('')}function piece(b){if(b.classList.contains('found'))return;b.classList.add('found');b.innerText='💗 '+pieces[found];found++;if(found===8)document.getElementById('letterBtn').style.display='inline-block'}
+</script>
+</body>
+</html>
